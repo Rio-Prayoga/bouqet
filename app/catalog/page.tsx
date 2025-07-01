@@ -15,12 +15,12 @@ export default function CatalogPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold text-center text-gray-800 mb-8">
+        <h1 className="text-4xl font-bold text-center text-gray-800 mb-4">
           Katalog Produk
         </h1>
         
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 mb-6">
           {categories.map((category) => (
             <Button
               key={category.id}
@@ -38,12 +38,11 @@ export default function CatalogPage() {
         </div>
 
         {/* Products Grid */}
-<div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-  {filteredProducts.map((product) => (
-    <ProductCard key={product.id} product={product} />
-  ))}
-</div>
-
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          {filteredProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
 
         {filteredProducts.length === 0 && (
           <div className="text-center py-16">
