@@ -67,14 +67,15 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
 
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-800 mb-2">{product.name}</h3>
+        <h3 className="text-sm sm:text-lg font-bold text-gray-800 mb-2">{product.name}</h3>
+
         <div className="mb-4">
           {product.originalPrice && (
-            <span className="text-gray-400 line-through text-sm mr-2">
+            <span className="text-gray-400 line-through text-xs sm:text-sm mr-2">
               Rp.{product.originalPrice.toLocaleString()}
             </span>
           )}
-          <span className="text-2xl font-bold text-[#000000]">
+          <span className="text-lg sm:text-2xl font-bold text-[#000000]">
             Rp.{product.price.toLocaleString()}
           </span>
         </div>
@@ -82,7 +83,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="flex space-x-2">
           <Button
             onClick={handleWhatsAppOrder}
-            className="flex-1 w-full text-sm px-3 py-2 sm:text-base sm:px-4 sm:py-2 bg-[#7F1D1D] hover:bg-[#511D43] text-white transition-colors flex items-center justify-center gap-2"
+            className="flex-1 text-xs px-2 py-1 sm:text-sm sm:px-4 sm:py-2 bg-[#7F1D1D] hover:bg-[#511D43] text-white transition-colors flex items-center justify-center gap-2"
           >
             <MessageCircle className="w-4 h-4" />
             Pesan via WA
