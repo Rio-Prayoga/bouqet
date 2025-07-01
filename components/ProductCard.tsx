@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { ShoppingCart, MessageCircle } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
-import FlyingImage from '@/components/animations/FlyingImage'; // pastikan file ini ada di path ini
+import FlyingImage from '@/components/animations/FlyingImage';
 import { useRef, useState } from 'react';
 
 interface Product {
@@ -81,10 +81,10 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         <div className="flex space-x-2">
           <Button
-            className="flex-1 bg-[#7F1D1D] hover:bg-[#511D43] text-white transition-colors"
             onClick={handleWhatsAppOrder}
+            className="flex-1 w-full text-sm px-3 py-2 sm:text-base sm:px-4 sm:py-2 bg-[#7F1D1D] hover:bg-[#511D43] text-white transition-colors flex items-center justify-center gap-2"
           >
-            <MessageCircle className="w-4 h-4 mr-2" />
+            <MessageCircle className="w-4 h-4" />
             Pesan via WA
           </Button>
           <Button
@@ -98,7 +98,6 @@ export default function ProductCard({ product }: ProductCardProps) {
         </div>
       </div>
 
-      {/* Animasi gambar terbang */}
       {flyImages.map((fly) => (
         <FlyingImage
           key={fly.id}
