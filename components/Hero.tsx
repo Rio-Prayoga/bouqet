@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -25,12 +26,15 @@ export default function Hero() {
           <p className="text-base md:text-xl mb-8 text-gray-200">
             Karena Setiap Momen Layak Diberi Buket Terbaik
           </p>
-          <Button 
-            size="lg" 
-            className="bg-[#7F1D1D] hover:bg-[#511D43] text-white px-6 py-2 text-base rounded-lg transition-colors"
-          >
-            Pilih Momen Anda
-          </Button>
+
+          <Link href="/catalog">
+            <Button
+              size="lg"
+              className="bg-[#7F1D1D] hover:bg-[#511D43] text-white px-6 py-2 text-base rounded-lg transition-colors"
+            >
+              Pesan Sekarang
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
