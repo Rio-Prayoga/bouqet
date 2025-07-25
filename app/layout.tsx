@@ -4,6 +4,8 @@ import { Inter } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Providers } from './providers';
+import { NotificationProvider } from '@/components/context/NotificationContext';
+import NotificationPopup from '@/components/NotificationPopup'; // ⬅️ Tambahin ini
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,9 +24,11 @@ export default function RootLayout({
     <html lang="id">
       <body className={inter.className}>
         <Providers>
-          <Header />
-          <main>{children}</main>
-          <Footer />
+          <NotificationProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </NotificationProvider>
         </Providers>
       </body>
     </html>
